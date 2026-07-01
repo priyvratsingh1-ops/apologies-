@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<!-- saved from url=(0032)http://127.0.0.1:5500/index.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>for monikaa · chingu</title>
+  <!-- soft aesthetic style, no labels, just feeling -->
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: linear-gradient(145deg, #f9f3e8 0%, #fde9e0 40%, #fce4d6 100%);
+      font-family: 'Segoe UI', 'Quicksand', 'Georgia', serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      margin: 0;
+      padding: 1.5rem;
+      position: relative;
+      overflow-x: hidden;
+    }
+
+    /* floating abstract shapes */
+    .bg-shape {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(70px);
+      opacity: 0.25;
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    .shape1 {
+      width: 350px;
+      height: 350px;
+      background: #ffd9b3;
+      top: -80px;
+      left: -70px;
+    }
+
+    .shape2 {
+      width: 400px;
+      height: 400px;
+      background: #f7c8b4;
+      bottom: -100px;
+      right: -90px;
+    }
+
+    .shape3 {
+      width: 250px;
+      height: 250px;
+      background: #ffe1cf;
+      top: 45%;
+      left: 15%;
+    }
+
+    .card {
+      position: relative;
+      z-index: 2;
+      max-width: 600px;
+      width: 100%;
+      background: rgba(255, 250, 245, 0.7);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      background: linear-gradient(135deg, rgba(255,245,235,0.75) 0%, rgba(255,240,228,0.8) 100%);
+      border-radius: 2.5rem;
+      padding: 2.8rem 2.2rem;
+      box-shadow: 0 25px 50px -10px rgba(180, 120, 90, 0.25), 0 0 0 1px rgba(255, 215, 185, 0.6);
+      text-align: center;
+      transition: all 0.3s ease;
+      border: 1px solid rgba(255, 245, 235, 0.9);
+    }
+
+    .delicate-border {
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      right: 12px;
+      bottom: 12px;
+      border: 1px dashed rgba(210, 150, 110, 0.35);
+      border-radius: 2.2rem;
+      pointer-events: none;
+    }
+
+    .moon-icon {
+      font-size: 2.8rem;
+      margin-bottom: 0.5rem;
+      opacity: 0.7;
+      letter-spacing: 2px;
+    }
+
+    h1 {
+      font-weight: 350;
+      font-size: 2.4rem;
+      color: #7b4b3a;
+      letter-spacing: 1px;
+      margin-bottom: 0.8rem;
+      font-family: 'Quicksand', 'Segoe UI', sans-serif;
+      word-spacing: 2px;
+      text-transform: lowercase;
+    }
+
+    .names-row {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+      margin: 1.2rem 0 1.8rem;
+      font-size: 1.8rem;
+      font-weight: 300;
+      color: #a4715c;
+    }
+
+    .names-row span {
+      background: rgba(250, 235, 220, 0.7);
+      padding: 0.3rem 1.4rem;
+      border-radius: 3rem;
+      backdrop-filter: blur(4px);
+      box-shadow: 0 4px 10px rgba(200, 150, 110, 0.15);
+    }
+
+    .heart-divider {
+      font-size: 2rem;
+      color: #c2886b;
+      margin: 0 0.2rem;
+    }
+
+    .apology-text {
+      font-size: 1.3rem;
+      line-height: 1.9;
+      color: #5e3e32;
+      background: rgba(255, 250, 245, 0.65);
+      backdrop-filter: blur(8px);
+      padding: 1.8rem 1.2rem;
+      border-radius: 2rem;
+      margin: 1.5rem 0 2rem;
+      font-weight: 400;
+      letter-spacing: 0.3px;
+      box-shadow: inset 0 0 20px rgba(255, 225, 200, 0.5);
+      border: 1px solid rgba(240, 200, 170, 0.5);
+      font-style: italic;
+    }
+
+    .apology-text p {
+      margin: 0.5rem 0;
+    }
+
+    .highlight {
+      font-weight: 500;
+      color: #b15e40;
+      background: rgba(255, 220, 195, 0.5);
+      padding: 0 0.4rem;
+      border-radius: 8px;
+    }
+
+    .regret-line {
+      font-size: 1.1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.4rem;
+      flex-wrap: wrap;
+      margin-top: 0.5rem;
+    }
+
+    .btn {
+      background: transparent;
+      border: 1.5px solid #c99174;
+      color: #6e4b3a;
+      padding: 0.8rem 2.4rem;
+      border-radius: 3rem;
+      font-size: 1.2rem;
+      font-weight: 400;
+      background: rgba(255, 245, 238, 0.7);
+      backdrop-filter: blur(10px);
+      cursor: pointer;
+      transition: all 0.3s ease;
+      letter-spacing: 0.6px;
+      margin-top: 0.6rem;
+      font-family: 'Quicksand', sans-serif;
+      box-shadow: 0 5px 15px rgba(180, 120, 80, 0.2);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+    }
+
+    .btn:hover {
+      background: #f7e0cf;
+      border-color: #b17456;
+      color: #4a2e24;
+      box-shadow: 0 10px 20px rgba(200, 140, 100, 0.3);
+      transform: translateY(-1px);
+    }
+
+    .signature {
+      margin-top: 2rem;
+      font-size: 1.1rem;
+      color: #8b6b5c;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      opacity: 0.8;
+      flex-wrap: wrap;
+    }
+
+    .signature .from {
+      font-style: italic;
+      font-weight: 350;
+      border-bottom: 1px dotted #c29a82;
+      padding-bottom: 2px;
+    }
+
+    .hidden-message {
+      display: none;
+      margin-top: 2rem;
+      font-size: 1.1rem;
+      color: #865c4b;
+      background: rgba(255, 235, 220, 0.7);
+      padding: 1rem 1.5rem;
+      border-radius: 2rem;
+      animation: fadeIn 0.7s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .flower-emoji {
+      font-size: 1.3rem;
+      filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
+    }
+
+    @media (max-width: 480px) {
+      .card {
+        padding: 2rem 1.2rem;
+      }
+      h1 {
+        font-size: 1.9rem;
+      }
+      .names-row {
+        font-size: 1.4rem;
+        gap: 0.3rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- soft blurred background decorations -->
+  <div class="bg-shape shape1"></div>
+  <div class="bg-shape shape2"></div>
+  <div class="bg-shape shape3"></div>
+
+  <div class="card">
+    <div class="delicate-border"></div>
+    
+    <div class="moon-icon">
+      ✦◌✧
+    </div>
+
+    <h1>a quiet sorry</h1>
+
+    <!-- only names, no labels like gf/friend -->
+    <div class="names-row">
+      <span>chingu</span>
+      <span class="heart-divider">♡</span>
+      <span>monikaa</span>
+    </div>
+
+    <div class="apology-text">
+      <p>today words slipped out</p>
+      <p>that never should have.</p>
+      <p style="font-size: 1.1rem; margin-top: 0.4rem;">
+        <span class="highlight">“chup raho”</span>  
+        <span style="margin:0 4px;">—</span> 
+        two syllables that felt loud and wrong.
+      </p>
+      <p style="margin-top: 1.2rem;">you didn’t deserve that.</p>
+      <p>not from me.</p>
+      <div class="regret-line">
+        <span>🌿</span> i'm truly sorry <span>🌿</span>
+      </div>
+    </div>
+
+    <!-- button for a gentle interactive moment -->
+    <button id="gentleBtn" class="btn">
+      <span>🥀</span> press if you can hear me <span>🕊️</span>
+    </button>
+
+    <div id="extraMessage" class="hidden-message">
+      <p>monikaa,</p>
+      <p>your silence means more than any noise I made.</p>
+      <p>i’ll wait as long as you need.</p>
+      <p style="margin-top: 0.8rem;">— chingu</p>
+    </div>
+
+    <div class="signature">
+      <span class="flower-emoji">🌸</span>
+      <span class="from">from chingu</span>
+      <span class="flower-emoji">🍃</span>
+    </div>
+  </div>
+
+  <script>
+    (function() {
+      const button = document.getElementById('gentleBtn');
+      const extraDiv = document.getElementById('extraMessage');
+
+      if (button && extraDiv) {
+        button.addEventListener('click', function(e) {
+          // Toggle visibility of the hidden apology message
+          if (extraDiv.style.display === 'block') {
+            extraDiv.style.display = 'none';
+            button.innerHTML = '<span>🥀</span> press if you can hear me <span>🕊️</span>';
+          } else {
+            extraDiv.style.display = 'block';
+            button.innerHTML = '<span>🌼</span> thank you for listening <span>🌙</span>';
+            
+            // subtle scroll into view if needed
+            extraDiv.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+          }
+        });
+      }
+
+      // Also gentle hover / touch reflects softness
+      console.log('🌸 for monikaa, from chingu. no labels, just heart.');
+    })();
+  </script>
+<!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+
+</body></html>
